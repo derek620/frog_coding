@@ -15,7 +15,7 @@ class CriteoDataset(Dataset):
             [row[name] if row[name] is not None else 0.0 for name in self.features], dtype=torch.float32
         )
         # x = torch.nan_to_num(x.float(), nan=0.0, posinf=0.0,neginf=0.0)
-
+        x = torch.log1p(x)
         y = torch.tensor(
             row['label'], dtype=torch.float32
         )

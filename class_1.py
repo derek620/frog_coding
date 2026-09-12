@@ -33,16 +33,7 @@ print(len(train_dataset))
 feature_names = ['label', 'integer_feature_1', 'integer_feature_2', 'integer_feature_3', 'integer_feature_4', 'integer_feature_5', 'integer_feature_6']
 
 # t_dataset = train_dataset.select_columns(['label']).with_format('torch')
-t_dataset = train_dataset.select_columns(feature_names).with_format('torch')
 
-from torch.utils.data import DataLoader
-
-
-train_loader = DataLoader(
-    t_dataset, 
-    batch_size=B,
-    shuffle=True
-)
 
 
 

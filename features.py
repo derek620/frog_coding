@@ -32,10 +32,19 @@ tdatas = CriteoDataset(test_dataset, FEATURE_NAMES)
 test_loader = DataLoader(tdatas, batch_size=BATCH_SIZE, shuffle=True)
 
 
+# import torch
 
+# t = train_dataset.with_format('torch')
+# for fname in FEATURE_NAMES:
+#     x = torch.tensor(t[fname], dtype=torch.float32)
+#     print("NAN= ", torch.isnan(x).any())
+#     x = torch.nan_to_num(x, nan=0.0)
+#     print("NAN= ", torch.isnan(x).any())
+#     f1_mean = x.mean()
+#     f1_min = x.min()
+#     f1_max = x.max()
+#     print(fname, ' ', x.dtype, x.shape)
+#     print('min = ', f1_min)
+#     print('max = ', f1_max)
+#     print('mean = ', f1_mean)
 
-t = train_dataset.with_format('torch')
-for fname in FEATURE_NAMES:
-    print(fname, ' ', t[fname].dtype, t[fname].shape)
-    f1_mean = t[fname].mean()
-    f1_min = t[fname].min()
